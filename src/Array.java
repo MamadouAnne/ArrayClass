@@ -30,6 +30,36 @@ public class Array {
             items[i] = items[i + 1];
         count--;
     }
+    public int indexOf(int item){
+        // search item, if we find we return the index
+        //otherwise we return -1
+        for (int i = 0; i < count; i++)
+            if (items[i] == item)
+            return i;
+
+            return -1;
+    }
+    public int max(int max) {
+       //Assign the first (or any) array element to the variable that will hold the maximum value.
+        items[0] = max;
+        //Loop through the remaining array elements, starting at the second element (subscript 1).
+        // When a larger value is found, that becomes the new maximum.
+        for (int i = 1; i < count; i++)
+            if (items[i] > max)
+                max = items[i];
+            return max;
+    }
+
+    public int[] intersect(){
+        int[] commonItems = {};
+        for (int i = 0; i < count; i++){
+            for (int j =0; j < count; j++)
+                if (items[i] == items[j])
+                    commonItems[i] = items[i];
+        }
+        return commonItems;
+    }
+
     public void print(){
         for (int i = 0; i < count; i++)
             System.out.println(items[i]);
